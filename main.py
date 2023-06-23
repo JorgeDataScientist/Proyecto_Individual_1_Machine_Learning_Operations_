@@ -24,10 +24,10 @@ def extract_data_from_zip():
     with zipfile.ZipFile(zip_file, 'r') as zip_ref:
         zip_ref.extractall('data.zip')  # Descomprime los archivos en el directorio '../data/'
     
-    datasets_df = pd.read_csv('../data/datasets_final.csv')
-    crew_df = pd.read_csv('../data/crew_data.csv')
-    cast_df = pd.read_csv('../data/cast_data.csv')
-    movie_genres_df = pd.read_csv('../data/movie_genres.csv')
+    datasets_df = pd.read_csv('datasets_final.csv')
+    crew_df = pd.read_csv('crew_data.csv')
+    cast_df = pd.read_csv('cast_data.csv')
+    movie_genres_df = pd.read_csv('movie_genres.csv')
     
     return datasets_df, crew_df, cast_df, movie_genres_df
 # ----------------------------------------------------
