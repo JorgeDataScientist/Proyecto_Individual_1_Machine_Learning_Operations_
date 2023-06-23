@@ -1,10 +1,13 @@
 from fastapi import FastAPI
+from fastapi.responses import FileResponse
 import pandas as pd
 import zipfile
 
 # uvicorn main:app --reload
 # ----------------------------------------------------
-app = FastAPI()
+app = FastAPI(title='Proyecto Individual 1 Machine_Learning Operations',
+            description='Jorge Luis Garcia',
+            version='1.0.1')
 # ----------------------------------------------------
 
 # Cargar los datasets
@@ -34,6 +37,22 @@ def extract_data_from_zip():
 
 # Rutas para los endpoints
 # ----------------------------------------------------
+# Ruta para el archivo index.html
+@app.get("/")
+async def read_index_html():
+    return FileResponse("index.html")
+
+# ---------------------------------------------------
+@app.get('/about/')
+async def about():
+    """
+    GET /about/
+
+    Retorna un diccionario con información sobre el Primer Proyecto individual:  partime 01 de Data Science.
+    """
+    return {'message': 'Primer Proyecto individual:  partime 01 de Data Science'}
+
+# ---------------------------------------------------
 @app.get("/cantidad-filmaciones-mes/{mes}")
 async def cantidad_filmaciones_mes_endpoint(mes: str):
     """
