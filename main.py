@@ -19,7 +19,7 @@ def extract_data_from_zip():
         cast_df (DataFrame): Dataframe que contiene los datos de reparto de películas.
         movie_genres_df (DataFrame): Dataframe que contiene los géneros de películas.
     """
-    zip_file = '../data/data.zip'
+    zip_file = 'data.zip'
     
     with zipfile.ZipFile(zip_file, 'r') as zip_ref:
         zip_ref.extractall('../data/')  # Descomprime los archivos en el directorio '../data/'
