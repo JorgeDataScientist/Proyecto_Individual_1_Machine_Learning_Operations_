@@ -12,6 +12,25 @@ app = FastAPI(title='Proyecto Individual #1 - Machine Learning Operations',
 
 # Cargar los datasets
 # ----------------------------------------------------
+datasets_df = None
+crew_df = None
+cast_df = None
+movie_genres_df = None
+
+@app.on_event('startup')
+async def startup():
+    global datasets_df, crew_df, cast_df, movie_genres_df
+    
+    zip_file = 'data.zip'
+    
+    with zipfile.ZipFile(zip_file, 'r') as zip_ref:
+        zip_ref.extractall('../data/')  # Descomprime los archivos en el directorio '../data/'
+    
+    datasets_df = pd.read_csv('../data/datasets_final.csv')
+    crew_df = pd.read_csv('../data/crew_data.csv')
+    cast_df = pd.read_csv('../data/cast_data.csv')
+    movie_genres_df = pd.read_csv('../data/movie_genres.csv')
+
 def extract_data_from_zip():
     """
     Extrae y carga los conjuntos de datos desde un archivo comprimido.
@@ -22,19 +41,7 @@ def extract_data_from_zip():
         cast_df (DataFrame): Dataframe que contiene los datos de reparto de películas.
         movie_genres_df (DataFrame): Dataframe que contiene los géneros de películas.
     """
-    zip_file = 'data.zip'
-    
-    with zipfile.ZipFile(zip_file, 'r') as zip_ref:
-        zip_ref.extractall('../data/')  # Descomprime los archivos en el directorio '../data/'
-    
-    datasets_df = pd.read_csv('../data/datasets_final.csv')
-    crew_df = pd.read_csv('../data/crew_data.csv')
-    cast_df = pd.read_csv('../data/cast_data.csv')
-    movie_genres_df = pd.read_csv('../data/movie_genres.csv')
-    
     return datasets_df, crew_df, cast_df, movie_genres_df
-
-datasets_df, crew_df, cast_df, movie_genres_df = extract_data_from_zip()
 # ----------------------------------------------------
 
 # Rutas para los endpoints
@@ -306,3 +313,7 @@ def recomendacion(titulo: str):
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
+
+
+
+
