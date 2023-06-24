@@ -1,11 +1,11 @@
 from fastapi import FastAPI
-from fastapi.responses import FileResponse
+from fastapi.responses import HTMLResponse
 import pandas as pd
 import zipfile
 
 # uvicorn main:app --reload
 # ----------------------------------------------------
-app = FastAPI(title='Proyecto Individual 1 Machine_Learning Operations',
+app = FastAPI(title='Proyecto Individual #1 - Machine Learning Operations',
             description='Jorge Luis Garcia',
             version='1.0.1')
 # ----------------------------------------------------
@@ -33,17 +33,22 @@ def extract_data_from_zip():
     movie_genres_df = pd.read_csv('../data/movie_genres.csv')
     
     return datasets_df, crew_df, cast_df, movie_genres_df
+
+datasets_df, crew_df, cast_df, movie_genres_df = extract_data_from_zip()
 # ----------------------------------------------------
 
 # Rutas para los endpoints
 # ----------------------------------------------------
 # Ruta para el archivo index.html
-@app.get("/")
+@app.get("/", response_class=HTMLResponse, tags=['Index'])
 async def read_index_html():
-    return FileResponse("index.html")
-
+    """
+    Ruta para el archivo index.html.
+    """
+    with open("index.html") as f:
+        return f.read()
 # ---------------------------------------------------
-@app.get('/about/')
+@app.get('/about/', tags=['about'])
 async def about():
     """
     GET /about/
@@ -53,7 +58,7 @@ async def about():
     return {'message': 'Primer Proyecto individual:  partime 01 de Data Science'}
 
 # ---------------------------------------------------
-@app.get("/cantidad-filmaciones-mes/{mes}")
+@app.get("/cantidad-filmaciones-mes/{mes}", tags=['Consulta 1'])
 async def cantidad_filmaciones_mes_endpoint(mes: str):
     """
     Endpoint para obtener la cantidad de filmaciones de películas realizadas en un mes específico.
@@ -80,7 +85,7 @@ async def cantidad_filmaciones_mes_endpoint(mes: str):
     return {"mensaje": mensaje}
 
 # ----------------------------------------------------
-@app.get("/cantidad-filmaciones-dia/{dia}")
+@app.get("/cantidad-filmaciones-dia/{dia}", tags=['Consulta 2'])
 async def cantidad_filmaciones_dia_endpoint(dia: str):
     """
     Endpoint para obtener la cantidad de filmaciones de películas realizadas en un día específico.
@@ -107,7 +112,7 @@ async def cantidad_filmaciones_dia_endpoint(dia: str):
     return {"mensaje": mensaje}
 
 # ----------------------------------------------------
-@app.get("/titulo-de-la-filmacion/{titulo}")
+@app.get("/titulo-de-la-filmacion/{titulo}", tags=['Consulta 3'])
 async def titulo_de_la_filmacion_endpoint(titulo: str):
     """
     Endpoint para obtener información de una filmación a partir de su título.
@@ -140,7 +145,7 @@ async def titulo_de_la_filmacion_endpoint(titulo: str):
     return {"mensaje": mensaje}
 
 # ----------------------------------------------------
-@app.get("/votos-valor-de-la-filmacion/{titulo}")
+@app.get("/votos-valor-de-la-filmacion/{titulo}", tags=['Consulta 4'])
 async def votos_valor_de_la_filmacion_endpoint(titulo: str):
     """
     Endpoint para obtener información sobre los votos y valoraciones de una filmación a partir de su título.
@@ -178,7 +183,7 @@ async def votos_valor_de_la_filmacion_endpoint(titulo: str):
     return {"mensaje": mensaje}
 
 # ----------------------------------------------------
-@app.get("/nombre-actor/{nombre}")
+@app.get("/nombre-actor/{nombre}", tags=['Consulta 5'])
 def nombre_actor(nombre: str):
     """
     Endpoint para obtener información sobre un actor a partir de su nombre.
@@ -224,7 +229,7 @@ def nombre_actor(nombre: str):
     }
 
 # ----------------------------------------------------
-@app.get("/nombre-director/{nombre}")
+@app.get("/nombre-director/{nombre}", tags=['Consulta 6'])
 def nombre_director(nombre: str):
     """
     Endpoint para obtener información sobre un director a partir de su nombre.
@@ -273,7 +278,7 @@ def nombre_director(nombre: str):
 
 # ----------------------------------------------------
 # Endpoint para la recomendación de películas
-@app.get('/recomendacion/{titulo}')
+@app.get('/recomendacion/{titulo}', tags=['Machine Learning'])
 def recomendacion(titulo: str):
     datasets_df, _, _, movie_genres_df = extract_data_from_zip()
 
