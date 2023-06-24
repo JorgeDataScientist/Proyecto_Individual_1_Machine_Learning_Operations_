@@ -268,10 +268,32 @@ def nombre_director(nombre: str):
         "peliculas": movie_info
     }
 
+# ----------------------------------------------------
 
 
+# ----------------------------------------------------
+# Endpoint para la recomendación de películas
+@app.get('/recomendacion/{titulo}')
+def recomendacion(titulo: str):
+    datasets_df, _, _, movie_genres_df = extract_data_from_zip()
 
+    def recommend_movies(title):
+        matching_movies = datasets_df[datasets_df['title'] == title]
+        if not matching_movies.empty:
+            movie_id = matching_movies.iloc[0]['id']
+            matching_genres = movie_genres_df[movie_genres_df['id'] == movie_id]
 
+            if not matching_genres.empty:
+                genre_ids = matching_genres['id'].tolist()
+                recommended_movies = datasets_df[datasets_df['id'].isin(genre_ids)].head(5)
+                return recommended_movies
+        return None
+
+    recommended_movies = recommend_movies(titulo)
+    if recommended_movies is not None:
+        return {'recommended_movies': recommended_movies.to_dict(orient='records')}
+    else:
+        return {'error': 'No se encontraron películas coincidentes'}
 
 
 # ----------------------------------------------------
