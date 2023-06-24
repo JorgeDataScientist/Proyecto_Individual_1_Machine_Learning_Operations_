@@ -1,129 +1,258 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+
 <head>
-  <title>Proyecto Individual 1</title>
-  <style>
-    body {
-      background-color: #f2f2f2;
-      font-family: Arial, sans-serif;
-      color: #333333;
-      margin: 0;
-      padding: 20px;
-    }
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    h1 {
-      color: #007bff;
-    }
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    p {
-      margin-bottom: 10px;
-    }
-
-    .endpoint {
-      background-color: #ffffff;
-      border-radius: 5px;
-      padding: 10px;
-      margin-bottom: 20px;
-    }
-
-    .endpoint-title {
-      font-size: 18px;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    .endpoint-description {
-      font-size: 14px;
-    }
-
-    .form-container {
-      margin-bottom: 20px;
-    }
-
-    .form-container input {
-      margin-right: 10px;
-    }
-  </style>
+    <title>API Peliculas</title>
 </head>
+
 <body>
-  <h1>Proyecto Individual #1</h1>
 
-  <div class="endpoint">
-    <div class="endpoint-title">GET /</div>
-    <div class="endpoint-description">API creada por Jorge Luis Garcia</div>
-  </div>
+    <!--Contenido-->
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            <span class="mb-0 h1">
+                <img src="/Machine_Learning/SH_logo.jpeg" alt="Logo" width="40" height="40" class="d-inline-block align-text-top mr-2 mt-1">
+                <h1>PROYECTO INDIVIDUAL Nº1</h1>
+                <h3>Machine Learning Operations (MLOps)</h3>
+            </span>
+        </div>
+    </nav>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Main content -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="box">
+                    <div class="box-header with-border">
+                        <div class="form-group col-md-12">
+                            <div class="card">
+                                <h4 class="card-header">Estudiante: Jorge Luis Garcia Salazar</h4>
+                                <div class="card-body">
+                                    <p class="card-text">
+                                        <!-- Reemplazar tuNombreDeUsuario por tu nombre de usuario en LinkedIn -->
+                                        <a href="https://www.linkedin.com/in/jljorge/" class="card-link" target="_blank">Linkedin</a>
+                                        <a href="https://github.com/jorgeluis174/Proyecto_Individual_1_Machine_Learning_Operations_" class="card-link" target="_blank">GitHub</a>
 
-  <div class="endpoint">
-    <div class="endpoint-title">GET /about/</div>
-    <div class="endpoint-description">Partime 01 de Data Science</div>
-  </div>
+                                </div>
+                            </div>
 
-  <div class="endpoint">
-    <div class="endpoint-title">
-        <a href="https://jorgeluisgarcia-pt01.onrender.com/cantidad-filmaciones-mes/enero" target="_blank">GET /cantidad-filmaciones-mes/{mes}</a>
-    </div>
-    <div class="endpoint-description">Endpoint para obtener la cantidad de filmaciones de películas realizadas en un mes específico.</div>
-</div>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <div class="card">
+
+                            <div class="card-header">
+                                Funciones
+                            </div>
+
+                            <!-- /.box-header -->
+                            <!-- centro -->
+                            <div class="card-body">
+
+                                <form name="formulario" id="formulario" method="POST">
+                                    <div class="form-group row g-0">
+
+                                        <div class="col-md-8 mt-3">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="exampleRadios"
+                                                    id="option1" value="option1" checked>
+                                                <label class="form-check-label" for="option1">
+                                                  Cantidad De Películas Que Fueron Estrenadas En El Mes Consultado<br>
+                                                  <h6>Introduzca El Nombre De Un Mes en Idioma Español</h6> 
+                                                </label>
+                                            </div>
+
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="exampleRadios"
+                                                    id="option2" value="option2">
+                                                <label class="form-check-label" for="option2">
+                                                  Cantidad De Películas Que Fueron Estrenadas En El Dia Consultado<br>
+                                                  <h6>Introduzca El Nombre De Dia Mes en Idioma Español</h6>
+                                                </label>
+                                            </div>
+
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="exampleRadios"
+                                                    id="option3" value="option3">
+                                                <label class="form-check-label" for="option3">
+                                                  Película, Año de Estreno y Puntuación
+                                                </label>
+                                            </div>
+
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="exampleRadios"
+                                                    id="option4" value="option4">
+                                                <label class="form-check-label" for="option4">
+                                                  Película, Votos y Promedio de Calificaciones<br>
+                                                  <h6>Introduzca El Nombre De Una Pelicula</h6>
+                                                </label>
+                                            </div>
+
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="exampleRadios"
+                                                    id="option5" value="option5">
+                                                <label class="form-check-label" for="option5">
+                                                  Películas por Actor<br>
+                                                  <h6>Introduzca El Nombre De Un Actor De Cine</h6>
+                                                </label>
+                                            </div>
+
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="exampleRadios"
+                                                    id="option6" value="option6">
+                                                <label class="form-check-label" for="option6">
+                                                  Películas por Director<br>
+                                                  <h6>Introduzca El Nombre De Un Director De Cine</h6>
+                                                </label>
+                                            </div>
+
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="exampleRadios"
+                                                    id="option7" value="option7">
+                                                <label class="form-check-label" for="option6">
+                                                    Peliculas Recomendadas<br>
+                                                    <h6>Introduzca El Nombre De Una Pelicula</h6>
+                                                    <h6>Regresa 5 Recomendaciones de Peliculas</h6>
+                                                </label>
+                                            </div>
+
+                                            <br />
+
+                                            <div class="form-group">
+                                                <label>Ingrese parametro:</label>
+                                                <input type="text" class="form-control" id="parametro"
+                                                    placeholder="Parametro" value="Enero">
+                                            </div>
+
+                                            <br />
+
+                                            <div class="form-group">
+                                                <button type="button" class="btn btn-primary mb-2"
+                                                    id="ejecutar">Ejecutar consulta</button>
+                                            </div>
+
+                                            <div class="form-group">
+                                                <label>Respuesta de la consulta</label>
+                                                <textarea class="form-control" id="respuesta" rows="5"></textarea>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-6 col-sm-4">
+                                            <img src="https://i.makeagif.com/media/10-11-2015/14U5oA.gif" class="img-fluid rounded-start mt-3 " alt="...">
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Fin centro -->
+                </div><!-- /.box -->
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+        </section><!-- /.content -->
+
+    </div><!-- /.content-wrapper -->
+    <!--Fin-Contenido-->
 
 
-<div class="endpoint">
-  <div class="endpoint-title">
-      <a href="https://jorgeluisgarcia-pt01.onrender.com/cantidad-filmaciones-dia/lunes" target="_blank">GET /cantidad-filmaciones-dia/{dia}</a>
-  </div>
-  <div class="endpoint-description">Endpoint para obtener la cantidad de filmaciones de películas realizadas en un día específico.</div>
-</div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript">
 
-<div class="endpoint">
-  <div class="endpoint-title">
-      <a href="https://jorgeluisgarcia-pt01.onrender.com/titulo-de-la-filmacion/jumanji" target="_blank">GET /titulo-de-la-filmacion/{titulo}</a>
-  </div>
-  <div class="endpoint-description">Endpoint para obtener información de una filmación a partir de su título.</div>
-</div>
+        $(document).ready(function () {
 
-<div class="endpoint">
-  <div class="endpoint-title">
-      <a href="https://jorgeluisgarcia-pt01.onrender.com/votos-valor-de-la-filmacion/Taxidriver" target="_blank">GET /votos-valor-de-la-filmacion/{titulo}</a>
-  </div>
-  <div class="endpoint-description">Endpoint para obtener información sobre los votos y valoraciones de una filmación a partir de su título.</div>
-</div>
+            $("#ejecutar").click(function () {
+                var baseUrl = "https://jorgeluisgarcia-pt01.onrender.com/"
+                var url;
 
-<div class="endpoint">
-  <div class="endpoint-title">
-      <a href="https://jorgeluisgarcia-pt01.onrender.com/nombre-actor/Tom%20Hanks" target="_blank">GET /nombre-actor/{nombre}</a>
-  </div>
-  <div class="endpoint-description">Endpoint para obtener información sobre un actor a partir de su nombre.</div>
-</div>
+                if ($('#option1').is(':checked')) {
+                    url = baseUrl + 'cantidad_filmaciones_mes/'
+                } else if ($('#option2').is(':checked')) {
+                    url = baseUrl + 'cantidad_filmaciones_dia/'
+                } else if ($('#option3').is(':checked')) {
+                    url = baseUrl + 'score_titulo/'
+                } else if ($('#option4').is(':checked')) {
+                    url = baseUrl + 'votos_titulo/'
+                } else if ($('#option5').is(':checked')) {
+                    url = baseUrl + 'get_actor/'
+                } else if ($('#option6').is(':checked')) {
+                    url = baseUrl + 'get_director/'
+                } else if ($('#option7').is(':checked')) {
+                    url = baseUrl + 'recomendacion/'
+                }
+                
 
-<div class="endpoint">
-  <div class="endpoint-title">
-      <a href="https://jorgeluisgarcia-pt01.onrender.com/nombre-director/Mike%20Hodges" target="_blank">GET /nombre-director/{nombre}</a>
-  </div>
-  <div class="endpoint-description">Endpoint para obtener información sobre un director a partir de su nombre.</div>
-</div>
+                url = url + $("#parametro").val();
+
+                $.ajax({
+                    type: "GET",
+                    url: url,
+                    beforeSend: function () {
+                        $("#respuesta").html("Procesando, espere por favor...");
+                    },
+                    success: function (data) {
+                        $("#respuesta").val(JSON.stringify(data));
+                    }
+                });
+
+            });
+
+            $("#option1").click(function () {
+                $("#parametro").val("Enero");
+            });
+
+            $("#option2").click(function () {
+                $("#parametro").val("Lunes");
+            });
+
+            $("#option3").click(function () {
+                $("#parametro").val("jumanji");
+            });
+
+            $("#option4").click(function () {
+                $("#parametro").val("jumanji");
+            });
+
+            $("#option5").click(function () {
+                $("#parametro").val("Tom Hanks");
+            });
+
+            $("#option6").click(function () {
+                $("#parametro").val("John Lasseter");
+            });
+
+            $("#option7").click(function () {
+                $("#parametro").val("Jumanji");
+            });
 
 
-  <script>
-    function getCantidadFilmacionesMes() {
-      var mes = document.getElementById("mesInput").value;
-      var resultContainer = document.getElementById("cantidadFilmacionesMesResult");
-      resultContainer.innerHTML = "Obteniendo cantidad de filmaciones para el mes: " + mes;
-
-      // Aquí puedes realizar la llamada a tu endpoint utilizando JavaScript o una librería como fetch o Axios
-      // y mostrar la respuesta en el contenedor de resultados.
-      // Por ejemplo:
-      /*
-      fetch("/cantidad-filmaciones-mes/" + mes)
-        .then(response => response.json())
-        .then(data => {
-          resultContainer.innerHTML = "Cantidad de filmaciones para el mes " + mes + ": " + data.count;
-        })
-        .catch(error => {
-          resultContainer.innerHTML = "Error al obtener la cantidad de filmaciones para el mes " + mes;
         });
-      */
-    }
-  </script>
+
+
+    </script>
 
 </body>
-</html>
 
+</html>
