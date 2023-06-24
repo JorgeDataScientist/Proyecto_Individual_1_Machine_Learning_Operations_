@@ -95,3 +95,4 @@ fastapi
 pandas
 numpy
 uvicorn
+scikit-learn
