@@ -23,7 +23,7 @@ ML_data = None
 async def startup():
     global datasets_df, crew_df, cast_df, movie_genres_df, ML_data
     
-    zip_file = '/data_1.0.2.zip'
+    zip_file = 'data_1.0.2.zip'
     
     with zipfile.ZipFile(zip_file, 'r') as zip_ref:
         zip_ref.extractall('../data/')  # Descomprime los archivos en el directorio '../data/'
