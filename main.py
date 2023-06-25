@@ -173,7 +173,7 @@ async def cantidad_filmaciones_dia_endpoint(dia: str):
     dia = dia.lower()
 
     # Verificar si el valor del día es válido
-    dias_validos = ["lunes", "martes", "miércoles", "jueves", "viernes", "sábado", "domingo"]
+    dias_validos = ["lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"]
     if dia not in dias_validos:
         raise HTTPException(status_code=400, detail="El valor del día es incorrecto.")
 
