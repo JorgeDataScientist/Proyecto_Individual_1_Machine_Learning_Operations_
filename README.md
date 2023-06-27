@@ -22,21 +22,39 @@ Este proyecto tiene como objetivo utilizar dos conjuntos de datos relacionados c
 ```python
 project_folders = {
     "data": "En esta carpeta se guardan los archivos descomprimidos del archivo data_1.0.2",
-    "EDA": "Esta carpeta contiene un archivo en formato .ipynb que se utilizó para realizar el análisis exploratorio de los datos.",
+
+    "EDA": "Esta carpeta contiene un archivo en formato .ipynb que se utilizó para realizar el análisis
+	exploratorio de los datos.",
+
     "EDA/data_a_explorar": "Contiene el archivo con el que se realizó el análisis exploratorio de los datos.",
-    "ETL": "Contiene 9 carpetas que incluyen procesos de transformación y limpieza de datos, tratamiento de columnas anidadas, 
-	sustitución de valores nulos, revisión de tipos de datos y códigos para eliminar valores repetidos o con formatos distintos 
-	a los que corresponden en su columna.",
-    "ETL/1-Arquitectura_Nuevos_DataSets": "Contiene un archivo en formato .ipynb en el que se realizó la separación del dataset original 
-	y se crearon nuevos datasets. Para más detalles, revisar el diccionario de datos.",
-    "ETL/6-DataSets_Final_movies_dataset": "Contiene un archivo en formato .zip en el que se encuentran comprimidos los archivos limpios.",
+
+    "ETL": "Contiene 9 carpetas que incluyen procesos de transformación y limpieza de datos, tratamiento de
+	columnas anidadas, sustitución de valores nulos, revisión de tipos de datos y códigos para eliminar
+	valores repetidos o con formatos distintos a los que corresponden en su columna.",
+
+    "ETL/1-Arquitectura_Nuevos_DataSets": "Contiene un archivo en formato .ipynb en el que se realizó la
+	separación del dataset original y se crearon nuevos datasets. Para más detalles, revisar el
+	diccionario de datos.",
+
+    "ETL/6-DataSets_Final_movies_dataset": "Contiene un archivo en formato .zip en el que se encuentran
+	comprimidos los archivos limpios.",
+
     "ETL/7-Datasets_original": "Contiene los archivos originales comprimidos en un archivo .zip.",
-    "ETL/9-Proceso_ETL_credits": "Contiene dos archivos en formato .ipynb donde se realiza el proceso ETL del archivo credits.csv.",
-    "Machine_Learning/Pruebas": "Contiene un archivo en formato .ipynb en el que se desarrolló la función para crear un modelo de aprendizaje
-	utilizando el método 'vecinos más cercanos'.",
+
+    "ETL/9-Proceso_ETL_credits": "Contiene dos archivos en formato .ipynb donde se realiza el proceso
+	ETL del archivo credits.csv.",
+
+    "Machine_Learning/Pruebas": "Contiene un archivo en formato .ipynb en el que se desarrolló la función
+	para crear un modelo de aprendizaje utilizando el método 'vecinos más cercanos'.",
+
+    "Scripts": "Contiene archivos relacionados con el entorno virtual"
+
     "data_1.0.2.zip": "Archivo comprimido en formato .zip que contiene la data limpia.",
+
     "index.html": "Archivo con el código en HTML, JavaScript y CSS que se utilizó para crear el Frontend.",
+
     "main.py": "Archivo que contiene todo el código de la API desarrollada con FastAPI.",
+
     "requirements.txt": "Archivo útil para realizar el despliegue en Render."
 }
 
