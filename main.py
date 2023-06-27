@@ -362,10 +362,21 @@ def nombre_director(nombre: str):
 
 # Endpoint para la recomendación de películas
 # ----------------------------------------------------
-@app.get("/recomendacion/{movie_title}", tags=['Machine Learnig'])
+@app.get("/recomendacion/{movie_title}", tags=['Machine Learning'])
 def recomendar_pelicula(movie_title: str):
+    """
+    Devuelve una lista de las 5 películas recomendadas basadas en una película dada.
+
+    Args:
+        movie_title (str): El título de la película.
+
+    Returns:
+        dict: Un diccionario con las películas recomendadas como una lista.
+    """
+
     recommended_movies = movie_recommendation(movie_title)
     return {"recommended_movies": recommended_movies.tolist()}
+
 
  
 
