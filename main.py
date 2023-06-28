@@ -48,7 +48,7 @@ def extract_data_from_zip():
 # ----------------------------------------------------
 
 # ----------------------------------------------------
-# Funcion Machine Learning - "Modelo de Vecinos mas Cercanos"
+# Funcion Machine Learning - "Modelo de K Vecinos mas Cercanos"
 def movie_recommendation(movie_title):
     """
     Devuelve una lista de las 5 películas recomendadas basadas en una película dada.
