@@ -342,7 +342,7 @@ En resumen, la creación de esta interfaz visual estática con HTML, CSS, JavaSc
 
 En este video tutorial, podrán encontrar una descripción paso a paso de cómo utilizar la aplicación, las principales funcionalidades que ofrece y cómo aprovechar al máximo sus características.
 
-<a href="https://youtu.be/WTN_k0Fn4QI" target="_blank">Video de Demostración</a>
+<a href="https://youtu.be/vhlR6XJjDKM" target="_blank">Video de Demostración</a>
 
 ---
 
