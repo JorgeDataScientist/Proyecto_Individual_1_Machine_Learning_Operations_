@@ -332,7 +332,7 @@ Por último, AJAX (Asynchronous JavaScript and XML) se utilizó para realizar pe
 
 En resumen, la creación de esta interfaz visual estática con HTML, CSS, JavaScript y AJAX brindó una capa adicional de comodidad al realizar pruebas de consumo de la API. Esta interfaz permitió interactuar con la API de manera intuitiva y visualmente atractiva, facilitando la visualización de los resultados y la exploración de las funcionalidades ofrecidas por la API.
 
-[Mi Aplicacion](https://jorgeluisgarcia-pt01.onrender.com/)
+[Mi Aplicacion](https://youtu.be/vhlR6XJjDKM)
 
 <img src="image/README/1687794899618.png" alt="1687794899618" width="636" height="410">
 
