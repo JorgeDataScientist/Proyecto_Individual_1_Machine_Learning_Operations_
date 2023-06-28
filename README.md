@@ -383,6 +383,9 @@ En resumen, la creación de esta interfaz visual estática con HTML, CSS, JavaSc
 
 <img src="image/README/1687794899618.png" alt="1687794899618" width="636" height="410">
 
+![1687973734288](image/README/1687973734288.png)
+
+
 ---
 
 # Video de Demostración
