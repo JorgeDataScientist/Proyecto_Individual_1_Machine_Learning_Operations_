@@ -239,7 +239,7 @@ La función "cosine_similarity" es una medida comúnmente utilizada en el campo 
 
 Sin embargo, la función "cosine_similarity" tiene algunas limitaciones, y una de las que más llamó mi atención es que opera con vectores de características numéricas. Por lo tanto, si los vectores contienen valores no numéricos o datos no estructurados, es posible que la función no sea aplicable directamente. Esta limitación captó mi atención, pero también hay otras consideraciones, como el espacio vectorial, la longitud y dimensionalidad de los vectores, la sensibilidad a la magnitud, entre otras.
 
-Para poder realizar una mejor predicción en el modelo, no solo podía basarme en la puntuación de la película, ya que existen otros factores importantes y de mucha más relevancia que la puntuación. Un ejemplo de ello es el género de la película. En un caso concreto, puedo mencionar dos películas con altas puntuaciones, pero de géneros totalmente distintos. 
+Para poder realizar una mejor predicción en el modelo, no solo podía basarme en la puntuación de la película, ya que existen otros factores importantes y de mucha más relevancia que la puntuación. Un ejemplo de ello es el género de la película. En un caso concreto, puedo mencionar dos películas con altas puntuaciones, pero de géneros totalmente distintos.
 
 Sería absurdo recomendarle a un usuario que acaba de ver "The Shawshank Redemption" (Cadena perpetua), que es un drama carcelario basado en la novela de Stephen King, una película como "The Dark Knight" (El Caballero Oscuro), que es una película de superhéroes y acción basada en el personaje de Batman de DC Comics.
 
@@ -253,11 +253,11 @@ No podía quedarme con la duda, así que comencé a investigar. En primer lugar,
 
 Por otro lado, también revisé una tesis doctoral de una brillante investigadora llamada Jessica Izquierdo Castillo, de la Universidad de Jaume (España), del departamento de Filosofía y Sociología Comunicacional Audiovisual y Publicidad. La tesis es un poco antigua, pero contiene un valioso contenido informativo. De hecho, si alguien trabaja en una empresa que presta servicios de streaming u otro relacionado con marketing y publicidad, este material sería considerado como un recurso imprescindible. El título de la tesis doctoral es: "Distribución y Exhibición Cinematográfica en España. Un estudio de situación del negocio en la transición tecnológica digital".
 
-Después de informarme mejor a través de estos recursos y otros artículos, he llegado a la conclusión de que, desde el punto de vista comercial y netamente capitalista, a las empresas que prestan servicios de streaming de pago no les interesa realmente recomendarte una película que te vaya a gustar de manera certera. Su objetivo principal es lograr que el usuario consuma contenido en la plataforma. 
+Después de informarme mejor a través de estos recursos y otros artículos, he llegado a la conclusión de que, desde el punto de vista comercial y netamente capitalista, a las empresas que prestan servicios de streaming de pago no les interesa realmente recomendarte una película que te vaya a gustar de manera certera. Su objetivo principal es lograr que el usuario consuma contenido en la plataforma.
 
 Estas empresas realizan grandes inversiones en la industria cinematográfica, invirtiendo en grandes empresas que producen películas y desarrollan nuevas tecnologías cinematográficas. También invierten en startups dedicadas al cine, la creación de documentales, series, entre otros.
 
-Estas compañías necesitan recuperar su inversión, y la forma obvia de hacerlo es asegurarse de que los usuarios de estas plataformas consuman la mayor cantidad de contenido posible, sin importar la puntuación de las películas o series que hayan visto. 
+Estas compañías necesitan recuperar su inversión, y la forma obvia de hacerlo es asegurarse de que los usuarios de estas plataformas consuman la mayor cantidad de contenido posible, sin importar la puntuación de las películas o series que hayan visto.
 
 ¿Comprendes mi punto de vista?
 
@@ -381,10 +381,9 @@ En resumen, la creación de esta interfaz visual estática con HTML, CSS, JavaSc
 
 <a href="https://jorgeluisgarcia-pt01.onrender.com/" target="_blank">Mi Aplicacion</a>
 
-<img src="image/README/1687794899618.png" alt="1687794899618" width="636" height="410">
+![1687974100473](image/README/1687974100473.png)
 
-![1687973734288](image/README/1687973734288.png)
-
+![1687974176499](image/README/1687974176499.png)
 
 ---
 
