@@ -273,7 +273,7 @@ KNN es especialmente útil cuando se espera que los puntos de datos similares es
 
 Sin embargo, lo interesante de KNN es que también puede aplicarse a conjuntos de datos que contienen información no numérica, como la columna de géneros en el caso de las películas. Aunque el algoritmo se basa en la distancia entre puntos de datos, la representación de los datos en un espacio de características adecuado puede permitir que KNN capture similitudes entre películas con géneros similares.
 
-![1687973311979](image/README/1687973311979.png)
+![1687974441364](image/README/1687974441364.png)
 
 Por lo tanto, al desarrollar un sistema de recomendación completo y preciso, es importante considerar tanto los aspectos numéricos, como la puntuación de las películas, como los aspectos no numéricos, como el género de las películas. KNN ofrece flexibilidad al trabajar con ambos tipos de datos, lo que lo convierte en una opción interesante para construir un sistema de recomendación que tome en cuenta múltiples factores.
 
