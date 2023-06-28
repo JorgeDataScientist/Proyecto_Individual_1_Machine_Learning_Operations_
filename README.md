@@ -316,7 +316,7 @@ Cada línea del archivo especifica el nombre de una librería seguido de `==` y 
 
 Una vez que el archivo `requirements.txt` está correctamente configurado, Render utilizará esta información para instalar automáticamente las librerías necesarias durante el proceso de despliegue de la API. Esto asegura que todas las dependencias estén disponibles en el entorno de ejecución de la aplicación en Render.
 
-[Mi Aplicacion](https://jorgeluisgarcia-pt01.onrender.com/)
+<a href="https://jorgeluisgarcia-pt01.onrender.com/" target="_blank">Mi Aplicacion</a>
 
 # FrontEnd
 
@@ -332,7 +332,7 @@ Por último, AJAX (Asynchronous JavaScript and XML) se utilizó para realizar pe
 
 En resumen, la creación de esta interfaz visual estática con HTML, CSS, JavaScript y AJAX brindó una capa adicional de comodidad al realizar pruebas de consumo de la API. Esta interfaz permitió interactuar con la API de manera intuitiva y visualmente atractiva, facilitando la visualización de los resultados y la exploración de las funcionalidades ofrecidas por la API.
 
-[Mi Aplicacion](https://youtu.be/vhlR6XJjDKM)
+<a href="https://jorgeluisgarcia-pt01.onrender.com/" target="_blank">Mi Aplicacion</a>
 
 <img src="image/README/1687794899618.png" alt="1687794899618" width="636" height="410">
 
@@ -342,7 +342,7 @@ En resumen, la creación de esta interfaz visual estática con HTML, CSS, JavaSc
 
 En este video tutorial, podrán encontrar una descripción paso a paso de cómo utilizar la aplicación, las principales funcionalidades que ofrece y cómo aprovechar al máximo sus características.
 
-[Video de Demostración](https://youtu.be/WTN_k0Fn4QI)
+<a href="https://youtu.be/WTN_k0Fn4QI" target="_blank">Video de Demostración</a>
 
 ---
 
