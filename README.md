@@ -15,7 +15,6 @@ Este proyecto tiene como objetivo utilizar dos conjuntos de datos relacionados c
 > *Comenzaste a trabajar como Data Scientist en una start-up que provee servicios de agregación de plataformas de streaming. Tu primer objetivo es crear un sistema de recomendación que aún no ha sido puesto en marcha. Sin embargo, te enfrentas a un desafío: los datos son poco maduros y requieren un proceso de limpieza y transformación.*
 
 > *El proyecto abarcará desde el tratamiento y recolección de datos (tareas de Data Engineer) hasta el entrenamiento y mantenimiento del modelo de Machine Learning a medida que lleguen nuevos datos.*
->
 
 # Diccionario de Carpetas y Archivos En Repositorio
 
@@ -231,6 +230,52 @@ Además del análisis exploratorio de datos, implemente un modelo de Machine Lea
 
 * Sistema de recomendación: Utilizamos técnicas de filtrado colaborativo y/o basado en contenido para construir un sistema de recomendación de películas personalizadas.
 * Esto permitió a los usuarios descubrir nuevas películas en función de sus preferencias. Mediante la API, los usuarios pueden ingresar el nombre de una película y el endpoint correspondiente les proporcionará 5 recomendaciones basadas en sus características y en las preferencias de otros usuarios con gustos similares. Esto mejora la experiencia del usuario al ofrecer sugerencias relevantes y personalizadas para su disfrute cinematográfico.
+
+## Análisis en el que me basé para utilizar el modelo de aprendizaje automático "k vecinos más cercanos"
+
+Para el desarrollo del sistema de recomendación, se nos proporcionó un enunciado. Cito fracción textual del enunciado: "Este consiste en recomendar películas a los usuarios basándose en películas similares, por lo que se debe encontrar la similitud de puntuación entre esa película y el resto de películas". El enunciado me pide que encuentre la similitud de puntuación entre una película y las demás películas, y naturalmente, lo primero que me viene a la mente para crear el sistema de recomendación es utilizar la función "cosine_similarity".
+
+La función "cosine_similarity" es una medida comúnmente utilizada en el campo de la recuperación de información y la minería de texto para evaluar la similitud entre dos vectores de características. En particular, la similitud del coseno se utiliza con mayor frecuencia para comparar la similitud entre vectores que representan documentos o textos.
+
+Sin embargo, la función "cosine_similarity" tiene algunas limitaciones, y una de las que más llamó mi atención es que opera con vectores de características numéricas. Por lo tanto, si los vectores contienen valores no numéricos o datos no estructurados, es posible que la función no sea aplicable directamente. Esta limitación captó mi atención, pero también hay otras consideraciones, como el espacio vectorial, la longitud y dimensionalidad de los vectores, la sensibilidad a la magnitud, entre otras.
+
+Para poder realizar una mejor predicción en el modelo, no solo podía basarme en la puntuación de la película, ya que existen otros factores importantes y de mucha más relevancia que la puntuación. Un ejemplo de ello es el género de la película. En un caso concreto, puedo mencionar dos películas con altas puntuaciones, pero de géneros totalmente distintos. 
+
+Sería absurdo recomendarle a un usuario que acaba de ver "The Shawshank Redemption" (Cadena perpetua), que es un drama carcelario basado en la novela de Stephen King, una película como "The Dark Knight" (El Caballero Oscuro), que es una película de superhéroes y acción basada en el personaje de Batman de DC Comics.
+
+Este incoherencia me llevó a plantearme muchas preguntas, pero las más relevantes fueron las siguientes:
+
+* ¿Qué le gustaría ver al usuario después de ver una película que le ha gustado mucho?
+* ¿Realmente querría ver películas con una valoración similar o igual a la que le ha gustado?
+* ¿Dónde reside la ganancia real en el negocio de los servicios de streaming pagados?
+
+No podía quedarme con la duda, así que comencé a investigar. En primer lugar, revisé un trabajo de fin de grado de un tal David López Delgado, estudiante de la Universidad de Sevilla, en la facultad de Ciencias Económicas y Empresariales. Su trabajo lleva por título: "ESTUDIO DE LAS PLATAFORMAS DE STREAMING". Este trabajo analiza las principales plataformas de contenido audiovisual bajo demanda de pago que operan en España, tratando su origen, características generales y estrategias de marketing que llevan a cabo.
+
+Por otro lado, también revisé una tesis doctoral de una brillante investigadora llamada Jessica Izquierdo Castillo, de la Universidad de Jaume (España), del departamento de Filosofía y Sociología Comunicacional Audiovisual y Publicidad. La tesis es un poco antigua, pero contiene un valioso contenido informativo. De hecho, si alguien trabaja en una empresa que presta servicios de streaming u otro relacionado con marketing y publicidad, este material sería considerado como un recurso imprescindible. El título de la tesis doctoral es: "Distribución y Exhibición Cinematográfica en España. Un estudio de situación del negocio en la transición tecnológica digital".
+
+Después de informarme mejor a través de estos recursos y otros artículos, he llegado a la conclusión de que, desde el punto de vista comercial y netamente capitalista, a las empresas que prestan servicios de streaming de pago no les interesa realmente recomendarte una película que te vaya a gustar de manera certera. Su objetivo principal es lograr que el usuario consuma contenido en la plataforma. 
+
+Estas empresas realizan grandes inversiones en la industria cinematográfica, invirtiendo en grandes empresas que producen películas y desarrollan nuevas tecnologías cinematográficas. También invierten en startups dedicadas al cine, la creación de documentales, series, entre otros.
+
+Estas compañías necesitan recuperar su inversión, y la forma obvia de hacerlo es asegurarse de que los usuarios de estas plataformas consuman la mayor cantidad de contenido posible, sin importar la puntuación de las películas o series que hayan visto. 
+
+¿Comprendes mi punto de vista?
+
+Por esta razón, decidí no utilizar la función "cosine_similarity", ya que para realizar recomendaciones se requieren muchos factores no numéricos que son de gran importancia al manipular al usuario y fomentar el consumo generalizado de contenido en una plataforma de streaming de pago.
+
+En su lugar, utilicé el método "k vecinos más cercanos" (KNN) para construir mi modelo. KNN es un algoritmo de aprendizaje automático supervisado que se utiliza para clasificación y regresión. Funciona encontrando los "k" puntos de datos más cercanos en función de una medida de distancia (por ejemplo, distancia euclidiana) y tomando una decisión basada en las etiquetas de clase o los valores de los vecinos más cercanos.
+
+KNN funciona bien con datos estructurados y numéricos, lo cual puede ser adecuado para tu conjunto de datos si tienes columnas como valoración numérica y no numerica. Además, las medidas de distancia utilizadas en KNN se basan en la proximidad espacial de los puntos de datos, lo que puede ser más apropiado para conjuntos de datos numéricos.
+
+KNN es especialmente útil cuando se espera que los puntos de datos similares estén cerca en el espacio de características. Si se espera que las películas con características similares estén cercanas en el espacio de características, KNN podría ser una opción adecuada para encontrar películas similares basándose en sus vecinos más cercanos.
+
+KNN es especialmente útil cuando se espera que los puntos de datos similares estén cerca en el espacio de características. En el caso de datos numéricos, KNN tiene en cuenta la proximidad espacial de los puntos de datos y puede ser una opción adecuada para encontrar películas similares basándose en sus vecinos más cercanos. Esto significa que si una película tiene características numéricas, como la puntuación de los usuarios, KNN puede ser útil para encontrar películas con puntuaciones similares.
+
+Sin embargo, lo interesante de KNN es que también puede aplicarse a conjuntos de datos que contienen información no numérica, como la columna de géneros en el caso de las películas. Aunque el algoritmo se basa en la distancia entre puntos de datos, la representación de los datos en un espacio de características adecuado puede permitir que KNN capture similitudes entre películas con géneros similares.
+
+Por lo tanto, al desarrollar un sistema de recomendación completo y preciso, es importante considerar tanto los aspectos numéricos, como la puntuación de las películas, como los aspectos no numéricos, como el género de las películas. KNN ofrece flexibilidad al trabajar con ambos tipos de datos, lo que lo convierte en una opción interesante para construir un sistema de recomendación que tome en cuenta múltiples factores.
+
+En conclusión, KNN es una buena opción cuando se trabaja con datos numéricos, pero también puede ser utilizado de manera efectiva en conjuntos de datos que contengan información no numérica, como los géneros de las películas. Esto permite construir un sistema de recomendación más completo al considerar tanto las puntuaciones como otros factores relevantes, proporcionando recomendaciones más precisas y personalizadas.
 
 # API con FASTAPI
 
